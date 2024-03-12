@@ -1,1 +1,1 @@
-gunicorn tennisacademy.wsgi
+web: gunicorn tennisacademy.wsgi
