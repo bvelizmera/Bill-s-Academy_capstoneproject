@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Views Part 1</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: red;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .tournament {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .tournament h2 {
+            margin-top: 0;
+        }
+
+        .tournament p {
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tournaments List</h1>
+    </header>
+
+
+    <div class="container">
+        {% for tournament in object_list %}
+        <div class="tournament">
+            <h2>{{tournament.name}}</h2>
+            <p>Date: {{tournament.start_date}} - {{tournament.end_date}}</p>
+            <p>Location: {{tournament.location}} </p>
+            <p>Number of Participants: {{tournament.max_participants}} </p>
+            <p>Prize: £{{tournament.prize_money}} </p>
+        </div>
+        {% endfor %}
+    <footer>
+        Created by Bill Veliz
+    </footer>
+</body>
+
+</html>

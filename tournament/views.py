@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Tournament
+
 # Create your views here.
-def my_tournament(request):
-    return HttpResponse("Welcome to the tournament!")
+class TournamentList(generic.ListView):
+    queryset = Tournament.objects.all()
+    template_name = "tournament_list.html"
