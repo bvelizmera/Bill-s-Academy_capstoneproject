@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<header>
+<h1>News</h1>
+</header>
+
+<div class="container">
+    {% for new in object_list %}
+    <div class="news">
+        <h2>{{new.title}}</h2>
+        <p>{{new.content|slice:":10"}} </p>
+        <p>Publication date: {{new.created_on}}</p>
+
+
+    {% endfor %}
+</div>
+
+{% endblock content %}
