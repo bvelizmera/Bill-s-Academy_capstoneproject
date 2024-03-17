@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<style>
+img {
+    width: 200px; /* Set width to 200 pixels */
+    height: auto; /* Maintain aspect ratio */
+}
+
+</style>
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Tournament Title -->
+                <h1 class="post-title">{{ tournament.name }}</h1>
+                <!-- Tournament Details -->
+                <p class="post_subtitle"> Start Date: {{ tournament.start_date }}</p>
+                <p class="post_subtitle">End Date: {{ tournament.end_date }}</p>
+                <p class="post-subtitle">Sponsored by: {{ tournament.sponsor }}</p>
+
+                <div class="d-none d-md-block col-md-6 masthead-image">
+                    <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col card mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <!-- The post content goes inside the card-text. -->
+                    <!-- Use the | safe filter inside the template tags -->
+                    <p class="card-text">
+                        <!-- {{ post.content | safe }} -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}

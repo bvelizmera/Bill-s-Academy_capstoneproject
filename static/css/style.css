@@ -4,6 +4,10 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
+img {
+    width: 200px; /* Set width to 200 pixels */
+    height: auto; /* Maintain aspect ratio */
+}
 
 header {
     background-color: red;
@@ -56,4 +60,37 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100vw;
+}
+
+/* Nav-bar css */
+
+#nav-bar * {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#nav-bar nav {
+    background-color: #333;
+}
+
+#nav-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-bar li {
+    display: inline-block;
+}
+
+#nav-bar li a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+}
+
+#nav-bar li a:hover {
+    background-color: #555;
 }

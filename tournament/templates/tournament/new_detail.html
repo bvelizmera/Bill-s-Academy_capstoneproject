@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<style>
+img {
+    width: 300pxvw; /* Set width to 200 pixels */
+    height: auto; /* Maintain aspect ratio */
+}
+
+</style>
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <div class="d-none d-md-block col-md-6 masthead-image">
+                    <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+                </div>
+                <!-- News Title -->
+                <h1 class="post-title">{{ new.title }}</h1>
+                <div class="container">{{new.content}}</div>
+                <!-- Tournament Details -->
+            </div>
+
+
+    {% endblock content %}

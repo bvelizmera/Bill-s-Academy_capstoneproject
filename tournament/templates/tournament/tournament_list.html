@@ -9,7 +9,7 @@
 <div class="container">
     {% for tournament in object_list %}
     <div class="tournament">
-        <h2>{{tournament.name}}</h2>
+       <a href="{% url 'tournament_detail' tournament.pk %}" class="post-link"> <h2>{{tournament.name}}</h2></a>
         <p>Date: {{tournament.start_date}} - {{tournament.end_date}}</p>
         <p>Location: {{tournament.location}} </p>
         <p>Number of Participants: {{tournament.max_participants}} </p>
