@@ -1,3 +1,69 @@
+/*Font Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Fonts */
+@font-face {
+    font-family: BaronFFR;
+    src: url(../fonts/BaronNeue-Regular.otf);
+}
+
+@font-face {
+    font-family: LeytonTF;
+    src: url(../fonts/Leyton-Bold.otf);
+}
+
+@font-face {
+    font-family: KraashBlack;
+    src: url(../fonts/Kraash-Black.ttf);
+}
+
+@font-face {
+    font-family: Kraash;
+    src: url(../fonts/Kraash.ttf);
+}
+
+
+
+
+
+:root{
+    --primary: #012765;
+    --secondary: #FF0000;
+    --accent: #D30CD5;
+    --dark: #010100;
+    --light: #FFD700;
+
+    --bs-body-font-family: poppins, sans-serif;
+}
+
+
+
+/* Style for the name and name of the website */
+#appname {
+    height: 110px;
+    width: 100%;
+    font-family: KraashBlack;
+    font-size: clamp(1rem, 3rem, 10rem);
+    color: var(--secondary);
+    text-shadow: 3px 3px var(--light);
+    text-transform: uppercase;
+    font-weight: 100;
+}
+#appname a {
+    /* Override default hyperlink styles */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    /* Add other styles as needed */
+}
+
+
+
+
+
+
+
+/* CSS for the header by ID */
+
+
 body {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     margin: 0;
@@ -10,7 +76,7 @@ img {
 }
 
 header {
-    background-color: red;
+    background-color: #000080;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -93,4 +159,15 @@ footer {
 
 #nav-bar li a:hover {
     background-color: #555;
+}
+
+/* Trial */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/e583918e-91b0-4051-b7b2-bb46a5e92c0a.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Cover ensures the image covers the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
 }
