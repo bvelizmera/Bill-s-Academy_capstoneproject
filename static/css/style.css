@@ -166,7 +166,7 @@ footer {
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../images/e583918e-91b0-4051-b7b2-bb46a5e92c0a.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    /* background-image: url('../images/e583918e-91b0-4051-b7b2-bb46a5e92c0a.jpeg'); Replace 'path/to/your/image.jpg' with the actual path to your image */
     background-size: cover; /* Cover ensures the image covers the entire viewport */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
