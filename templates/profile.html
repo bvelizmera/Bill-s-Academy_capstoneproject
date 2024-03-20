@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
-
-<h1>User Profile</h1>
+<header>
+    <h1>User Profile</h1>
+</header>
 <p>Name: {{ profile.f_name }}</p>
 <p>Description: {{ profile.description }} </p>
 <p>Category: {{profile.get_category_display}} </p>
