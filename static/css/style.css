@@ -21,16 +21,22 @@
     src: url(../fonts/Kraash.ttf);
 }
 
+@font-face {
+    font-family: Nike;
+    src: url(../fonts/NIKE.ttf)
+}
+
 
 
 
 
 :root{
-    --primary: #012765;
-    --secondary: #FF0000;
+    --primary: #2E4057 ;
+    --secondary: #334D5C;
     --accent: #D30CD5;
     --dark: #010100;
-    --light: #FFD700;
+    --light:  #F5F5F5;
+
 
     --bs-body-font-family: poppins, sans-serif;
 }
@@ -39,14 +45,13 @@
 
 /* Style for the name and name of the website */
 #appname {
-    height: 110px;
     width: 100%;
-    font-family: KraashBlack;
+    font-family: Nike;
     font-size: clamp(1rem, 3rem, 10rem);
     color: var(--secondary);
     text-shadow: 3px 3px var(--light);
     text-transform: uppercase;
-    font-weight: 100;
+    font-weight: bold;
 }
 #appname a {
     /* Override default hyperlink styles */
@@ -76,18 +81,21 @@ img {
 }
 
 header {
-    background-color: #000080;
-    color: #fff;
+    background-color: #CCCCCC;
+    color: #C4DFE6 ;
     padding: 10px 0;
     text-align: center;
 }
 
 h1 {
     margin: 0;
-    background-color: red;
-    color: #fff;
+    background-color: #F5F5F5;
+    border: 10px solid #334D5C;
+    color: #334D5C;
+    font-family: Nike;
     padding: 10px 0;
     text-align: center;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -128,50 +136,6 @@ footer {
     width: 100vw;
 }
 
-/* Nav-bar css */
-
-#nav-bar * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-#nav-bar nav {
-    background-color: #333;
-}
-
-#nav-bar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-#nav-bar li {
-    display: inline-block;
-}
-
-#nav-bar li a {
-    display: block;
-    padding: 10px 20px;
-    color: black;
-    text-decoration: none;
-}
-
-#nav-bar li a:hover {
-    background-color: #555;
-}
-
-/* Logged in as css */
-
-.navbar-element {
-    float: right;
-    background-color: #ffcc00; /* Background color for standout item */
-    color: #333; /* Text color for standout item */
-    padding: 10px 15px; /* Padding for standout item */
-    border-radius: 5px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
-}
-
 /* Trial */
 
 body {
@@ -184,3 +148,53 @@ body {
 }
 
 
+
+/* Navbar css */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+#navbar-alt * {
+  /* mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%); */
+  margin: 0 auto;
+  background: linear-gradient(90deg, #CCCCCC 0%, #CCCCCC 25%, #CCCCCC 75%, #CCCCCC 100%);
+}
+
+#ul-left {
+  text-align: left;
+  /* background: linear-gradient(90deg, #CCCCCC 0%, #CCCCCC 25%, #CCCCCC 75%, #CCCCCC 100%); */
+}
+#ul-center {
+    text-align: center;
+}
+
+#ul-center img {
+    height: 100px;
+    width: auto;
+}
+
+#ul-right {
+    text-align: right;
+    margin-right: 32px;
+}
+
+#navbar-alt li {
+  display: inline-block;
+}
+
+#navbar-alt a {
+  padding: 18px;
+  font-family: "Nike";
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+#navbar-alt a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+  border-radius: 10%;
+}

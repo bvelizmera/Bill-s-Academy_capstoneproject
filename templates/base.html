@@ -44,47 +44,52 @@
     </header>
 
     <main>
-        <nav id="nav-bar">
 
-            <ul>
-                <div clas="row">
-                    <div class="col">
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'tournaments' %}">Tournaments</a></li>
-
-                    </div>
-
-                    <div class="col">
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                             You are logged in as <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'profile' %}">{{ user.username }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'edit_profile' %}">Edit Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_login' %}">Login</a>
-                        </li>
-                        {% endif %}
-                    </div>
+        <nav id="navbar-alt" class="row">
+            <div class="col">
+                <ul id="ul-left">
+                    <li>
+                        <a href="{% url 'home' %}" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'tournaments' %}">Tournaments</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="ul-center" class="col"><img src="../static/images/output (9)-Photoroom.png-Photoroom.png"> </div>
+            <div class="col">
+                <ul id="ul-right">
+                    {% if user.is_authenticated %}
 
 
-                </div>
-            </ul>
+                    <li> <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'profile' %}"> {{ user.username }}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'edit_profile' %}">Edit Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
+                    </li>
+
+                    {% endif %}
+                </ul>
+            </div>
         </nav>
+        
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
