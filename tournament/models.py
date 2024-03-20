@@ -10,7 +10,7 @@ class WebUser(models.Model):
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    f_name = models.CharField(max_length=50, unique=True)
+    f_name = models.CharField(max_length=50)
     l_name = models.CharField(max_length=50)
     description = models.TextField()
     # tournament = models.ManyToManyField(Tournament, related_name="playing-tournaments", blank=True)
@@ -18,7 +18,7 @@ class WebUser(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     # photo_url = models.CharField(max_length=500, blank=True)
     # photo = CloudinaryField('image', default='placeholder', blank=True)
-    category = models.CharField(choices=STATUS, blank=True, null=True)
+    category = models.IntegerField(choices=STATUS, blank=True, null=True)
 
     def __str__(self):
         return f"{self.f_name} {self.l_name} - {self.user}"
