@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Tournament, New
-
+from .forms import ProfileForm
+from .models import User, WebUser
 # Create your views here.
 class TournamentList(generic.ListView):
     queryset = Tournament.objects.all()
@@ -52,3 +53,19 @@ def new_detail(request, pk):
         "tournament/new_detail.html",
         {"new": new},
     )
+
+def profile(request):
+    profile = WebUser.objects.get_or_create(user=request.user)[0]
+    return render(request, 'profile.html', {'profile':profile})
+
+def edit_profile(request):
+    profile = WebUser.objects.get_or_create(user=request.user)[0]
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = ProfileForm(instance=profile)
+    return render(request, 'edit_profile.html', {'form': form})
+

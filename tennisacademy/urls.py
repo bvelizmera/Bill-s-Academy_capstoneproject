@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from tournament import views
 
 urlpatterns = [
     path("", include("tournament.urls"), name="tournament-urls"),
     path("admin/", admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("accounts/", include("allauth.urls")),
-    
+    path('profile/', views.profile, name='profile'),
+    path('edit-profile/', views.edit_profile, name='edit_profile'),
 ]

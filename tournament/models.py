@@ -18,7 +18,7 @@ class WebUser(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     # photo_url = models.CharField(max_length=500, blank=True)
     # photo = CloudinaryField('image', default='placeholder', blank=True)
-    category = models.IntegerField(choices=STATUS, blank=True)
+    category = models.CharField(choices=STATUS, blank=True, null=True)
 
     def __str__(self):
         return f"{self.f_name} {self.l_name} - {self.user}"
