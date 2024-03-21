@@ -1,9 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-    <h1>Edit Profile</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
+<h1>Edit Profile</h1>
+<div id="signup" class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id="sign-button" class="btn btn-signup right" type="submit">Save</button>
+    </form>
+</div>
 
 {% endblock content %}

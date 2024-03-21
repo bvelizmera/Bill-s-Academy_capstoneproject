@@ -15,7 +15,7 @@
     <div class="container">
 
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div id="signup" class="col-md-6 masthead-text">
                 <!-- Tournament Title -->
 
                 <!-- Tournament Details -->
@@ -23,10 +23,11 @@
                 <p class="post_subtitle">End Date: {{ tournament.end_date }}</p>
                 <p class="post-subtitle">Sponsored by: {{ tournament.sponsor }}</p>
                 {% if request.user == tournament.creator %}
-                <a id="sign-button" class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                <a id="sign-button" class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
                     aria-current="page" href="{% url 'edit_tournament' pk=tournament.pk %}"> Edit </a>
-                <a id="sign-button" class="nav-link {% if request.path == logout_url %}active{% endif %}"
-                    aria-current="page" href="{% url 'delete_tournament' pk=tournament.pk %}"> Edit </a>
+                    <br>
+                <a id="sign-button" class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'delete_tournament' pk=tournament.pk %}"> Delete </a>
                 {% endif %}
                 <div class="d-none d-md-block col-md-6 masthead-image">
                     <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
