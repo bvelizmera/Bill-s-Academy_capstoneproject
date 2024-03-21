@@ -20,6 +20,14 @@ class WebUser(models.Model):
     # photo = CloudinaryField('image', default='placeholder', blank=True)
     category = models.IntegerField(choices=STATUS, blank=True, null=True)
 
+    class Meta:
+        permissions = [
+            ("can_modify_tournament", "Can modify tournament"),
+            ("can_add_tournament", "Can add tournament"),
+            ("can_delete_tournament", "Can delete tournament"),
+            ("can_view_tournament", "Can view tournament"),
+        ]
+
     def __str__(self):
         return f"{self.f_name} {self.l_name} - {self.user}"
 

@@ -96,7 +96,6 @@ header {
 
 h1 {
     margin: 0;
-    border-radius: 12px;
     background-color: #F5F5F5;
     border: 10px solid #334D5C;
     color: #334D5C;
@@ -163,13 +162,16 @@ body {
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 
-#navbar-alt * {
+#navbar-alt {
   /* mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%); */
   margin: 0 auto;
+  border-top: 2px solid #334D5C;
+  border-bottom: 2px solid #334D5C;
   box-sizing: border-box;
   background: linear-gradient(90deg, #CCCCCC 0%, #CCCCCC 25%, #CCCCCC 75%, #CCCCCC 100%);
   max-width: 100%;
 }
+
 
 #ul-left {
   text-align: left;
@@ -209,6 +211,27 @@ body {
   border-radius: 10%;
 }
 
+/* Design for Sign In Page */
+
+#signin {
+    color: #334D5C;
+    font-family: Luxia;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Design for Sign Up Page */
+
+#signup {
+    color: #334D5C;
+    font-family: Luxia;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
 /* Design for Sign Out Page */
 
 #signout {
@@ -221,14 +244,14 @@ body {
     font-size: 2rem;
 }
 
-#signout button {
+#sign-button {
     border: 5px solid #334D5C;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-#signout button:hover {
+#sign-button:hover {
     background-color: #334D5C;
     color:#CCCCCC;
 }

@@ -4,6 +4,9 @@ from .models import Tournament, New
 from .forms import ProfileForm
 from .models import User, WebUser
 # Create your views here.
+
+
+
 def homepage(request):
     return render(request, 'base.html')
 

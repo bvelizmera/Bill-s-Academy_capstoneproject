@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<header>
-    <h1>Tournaments List</h1>
-</header>
+<h1>Tournaments List</h1>
 
 
 <div class="container">
     {% for tournament in object_list %}
     <div class="tournament">
-       <a href="{% url 'tournament_detail' tournament.pk %}" class="post-link"> <h2>{{tournament.name}}</h2></a>
+        <a href="{% url 'tournament_detail' tournament.pk %}" class="post-link">
+            <h2>{{tournament.name}}</h2>
+        </a>
         <p>Date: {{tournament.start_date}} - {{tournament.end_date}}</p>
         <p>Location: {{tournament.location}} </p>
         <p>Number of Participants: {{tournament.max_participants}} </p>
