@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
+from django.contrib.auth.decorators import login_required, permission_required
 from .models import Tournament, New
-from .forms import ProfileForm
-from .models import User, WebUser
+from .forms import ProfileForm, TournamentForm
+from .models import User, WebUser, Tournament
+from django.urls import reverse
 # Create your views here.
 
 
@@ -75,3 +77,40 @@ def edit_profile(request):
         form = ProfileForm(instance=profile)
     return render(request, 'edit_profile.html', {'form': form})
 
+@login_required
+@permission_required('tournament.add_tournament', raise_exception=True)
+def can_add_tournament(request):
+    if request.method == 'POST':
+        form = TournamentForm(request.POST)
+        if form.is_valid():
+            tournament = form.save(commit=False)
+            tournament.creator = request.user
+            tournament.save()
+            return redirect(('tournament_detail'), pk=tournament.pk)
+    else:
+        form = TournamentForm()
+    return render(request, 'tournament/add_tournament.html', {'form': form})
+
+@login_required
+def can_edit_tournament(request, pk):
+    tournament = get_object_or_404(Tournament, pk=pk)
+    if tournament.creator != request.user:
+        return HttpResponseForbidden("You do not have permission to edit this tournament.")
+    if request.method == 'POST':
+        form = TournamentForm(request.POST, instance=tournament)
+        if form.is_valid():
+            form.save()
+            return redirect('tournament_detail', pk=tournament.pk)
+    else:
+        form = TournamentForm(instance=tournament)
+    return render(request, 'tournament/edit_tournament.html', {'form': form})
+
+@login_required
+def can_delete_tournament(request, pk):
+    tournament = get_object_or_404(Tournament, pk=pk)
+    if tournament.creator != request.user:
+        return HttpResponseForbidden("You do not have permission to delete this tournament.")
+    if request.method == 'POST':
+        tournament.delete()
+        return redirect('tournaments')  # Redirect to a suitable page after deletion
+    return render(request, 'tournament/delete_tournament.html', {'tournament': tournament})

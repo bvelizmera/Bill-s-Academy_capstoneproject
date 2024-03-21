@@ -20,14 +20,6 @@ class WebUser(models.Model):
     # photo = CloudinaryField('image', default='placeholder', blank=True)
     category = models.IntegerField(choices=STATUS, blank=True, null=True)
 
-    class Meta:
-        permissions = [
-            ("can_modify_tournament", "Can modify tournament"),
-            ("can_add_tournament", "Can add tournament"),
-            ("can_delete_tournament", "Can delete tournament"),
-            ("can_view_tournament", "Can view tournament"),
-        ]
-
     def __str__(self):
         return f"{self.f_name} {self.l_name} - {self.user}"
 
@@ -36,7 +28,7 @@ class WebUser(models.Model):
 #This is the nournament model
 class Tournament(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tournament_created")
+    creator = models.ForeignKey(User, on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField()
     location = models.CharField(max_length=200)
@@ -47,13 +39,18 @@ class Tournament(models.Model):
     sponsor = models.CharField(max_length=50)
     description = models.TextField()
     participants = models.ManyToManyField(WebUser, related_name="participatiing", blank=True)
-    created_on = models.DateTimeField()
-    updated_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now_add=True, null=True)
+    updated_on = models.DateTimeField(auto_now=True, null=True)
     max_participants = models.IntegerField()
     category = models.IntegerField(choices=STATUS, blank=True)
 
     class Meta:
         ordering = ["start_date"]
+        # permissions = [
+        #     ("add_tournament", "Can add tournament"),
+        #     # ("change_tournament", "Can change tournament"),
+        #     # ("delete_tournament", "Can delete tournament"),
+        # ]
 
     def __str__(self):
         return f"{self.name} starts on {self.start_date} and ends on {self.end_date}, played on {self.surface} | sponsored by {self.sponsor}"

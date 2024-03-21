@@ -22,7 +22,12 @@
                 <p class="post_subtitle"> Start Date: {{ tournament.start_date }}</p>
                 <p class="post_subtitle">End Date: {{ tournament.end_date }}</p>
                 <p class="post-subtitle">Sponsored by: {{ tournament.sponsor }}</p>
-
+                {% if request.user == tournament.creator %}
+                <a id="sign-button" class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'edit_tournament' pk=tournament.pk %}"> Edit </a>
+                <a id="sign-button" class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'delete_tournament' pk=tournament.pk %}"> Edit </a>
+                {% endif %}
                 <div class="d-none d-md-block col-md-6 masthead-image">
                     <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
                 </div>
@@ -30,18 +35,5 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <!-- The post content goes inside the card-text. -->
-                    <!-- Use the | safe filter inside the template tags -->
-                    <p class="card-text">
-                        <!-- {{ post.content | safe }} -->
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     {% endblock content %}

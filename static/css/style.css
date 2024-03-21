@@ -247,6 +247,7 @@ body {
 #sign-button {
     border: 5px solid #334D5C;
     text-transform: uppercase;
+    color:#334D5C;
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -254,4 +255,22 @@ body {
 #sign-button:hover {
     background-color: #334D5C;
     color:#CCCCCC;
+}
+
+/* Css for delete/edition tournament pages */
+
+#del-tourn {
+    color: #334D5C;
+    font-family: Luxia;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#mod-tourn {
+    color: #334D5C;
+    font-family: Luxia;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
 }
