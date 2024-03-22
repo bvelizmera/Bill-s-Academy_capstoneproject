@@ -37,8 +37,8 @@
         <a href="{%url 'home'%}">
             <div class="container-fluid justify-content-center">
                 <div class="row text-center">
-                    <div class="col">SUPER</div>
                     <div class="col">TENNIS</div>
+                    <div class="col"><img id="img-head" src="{% static 'images/logo.png' %}"> </div>
                     <div class="col">ACADEMY</div>
                 </div>
             </div>
@@ -49,25 +49,20 @@
 
         <nav id="navbar-alt" class="row">
             <div class="col">
-                <ul id="ul-left">
+                <ul id="ul-center">
                     <li>
                         <a href="{% url 'home' %}" aria-current="page">Home</a>
                     </li>
                     <li>
                         <a href="{% url 'tournaments' %}">Tournaments</a>
                     </li>
-                </ul>
-            </div>
-            <div id="ul-center" class="col"><img src="{% static 'images/logo.png' %}"> </div>
-            <div class="col">
-                <ul id="ul-right">
 
 
                     {% if user.is_authenticated %}
 
 
-                    <li class="nav-item"> <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'profile' %}"> {{ user.username }}</a>
+                    <li class="nav-item"> <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'profile' %}"> {{ user.username }}</a>
                     </li>
 
                     <li class="nav-item">
@@ -78,7 +73,7 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'add_tournament' %}">Add Tournament</a>
-                    {% endif %}        
+                        {% endif %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}">Logout</a>
@@ -97,6 +92,7 @@
                     {% endif %}
                 </ul>
             </div>
+
         </nav>
 
         {% block content %}

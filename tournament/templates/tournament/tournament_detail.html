@@ -10,30 +10,55 @@
     }
 </style>
 
-<div class="masthead">
-    <h1 class="post-title">{{ tournament.name }}</h1>
-    <div class="container">
+<h1 class="post-title">{{ tournament.name }}</h1>
+<div class="container">
 
-        <div class="row g-0">
-            <div id="signup" class="col-md-6 masthead-text">
-                <!-- Tournament Title -->
+    <div class="row tournament">
+        <!-- Tournament Title -->
+        <div class="col">
 
+            <div id="signup">
                 <!-- Tournament Details -->
                 <p class="post_subtitle"> Start Date: {{ tournament.start_date }}</p>
                 <p class="post_subtitle">End Date: {{ tournament.end_date }}</p>
                 <p class="post-subtitle">Sponsored by: {{ tournament.sponsor }}</p>
-                {% if request.user == tournament.creator %}
-                <a id="sign-button" class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
+                <p class="post-subtitle">Location: {{ tournament.location }}</p>
+                <p class="post-subtitle">Surface: {{ tournament.surface }}</p>
+                <p class="post-subtitle">Entry Fee: £{{ tournament.entry_fee }}</p>
+                <p class="post-subtitle">Prize Money: £{{ tournament.prize_money }}</p>
+                <p class="post-subtitle">Sponsor: {{ tournament.sponsor }}</p>
+                <p class="post-subtitle">Max. players: {{ tournament.max_ }}</p>
+                <p class="post-subtitle">Category: {{ tournament.get_category_display}}</p>
+
+
+            </div>
+        </div>
+        <div class="col">
+            {% if request.user == tournament.creator %}
+            <p>
+                <a id="sign-button"
+                    class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
                     aria-current="page" href="{% url 'edit_tournament' pk=tournament.pk %}"> Edit </a>
-                    <br>
-                <a id="sign-button" class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
+            </p>
+            <br>
+            <p>
+                <a id="sign-button"
+                    class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
                     aria-current="page" href="{% url 'delete_tournament' pk=tournament.pk %}"> Delete </a>
-                {% endif %}
-                <div class="d-none d-md-block col-md-6 masthead-image">
-                </div>
+            </p>
+        </div>
+        {% endif %}
+        <div class="col">
+            <div id="signup">
+                <img id="img-borderless" src="{{ tournament.img_url }}">
+            </div>
+            <div id="signup">
+                {{ tournament.description }}
             </div>
         </div>
     </div>
+</div>
 
+</div>
 
-    {% endblock content %}
+{% endblock content %}

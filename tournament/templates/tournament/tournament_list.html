@@ -6,14 +6,30 @@
 
 <div class="container">
     {% for tournament in object_list %}
-    <div class="tournament">
-        <a href="{% url 'tournament_detail' tournament.pk %}" class="post-link">
-            <h2>{{tournament.name}}</h2>
-        </a>
-        <p>Date: {{tournament.start_date}} - {{tournament.end_date}}</p>
-        <p>Location: {{tournament.location}} </p>
-        <p>Number of Participants: {{tournament.max_participants}} </p>
-        <p>Prize: £{{tournament.prize_money}} </p>
+    <div id="tourn-list"class="container tournament">
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'tournament_detail' tournament.pk %}" class="post-link">
+                    <h2>{{tournament.name}}</h2>
+                </a>
+                <p>Date: {{tournament.start_date}} - {{tournament.end_date}}</p>
+                <p>Location: {{tournament.location}} </p>
+                <p>Number of Participants: {{tournament.max_participants}} </p>
+                <p>Prize: £{{tournament.prize_money}} </p>
+
+                {% if request.user == tournament.creator %}
+                <p id="tourn-own">Owner</p>
+                {% else %}
+                Creator: <span id="tourn-cre">{{tournament.creator}}</span>
+
+                {% endif %}
+            </div>
+            <div class="col">
+                <img id="img-borderless" src="{{ tournament.img_url }}">
+
+            </div>
+        </div>
+
     </div>
     {% endfor %}
 

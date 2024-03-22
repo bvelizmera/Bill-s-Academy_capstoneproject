@@ -36,6 +36,9 @@
     margin: 0;
 }
 
+.profile-pag {
+    color:#D30CD5
+}
 
 :root{
     --primary: #2E4057 ;
@@ -82,7 +85,17 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
+
+#img-head {
+    width: 75px;
+    height: auto;
+    border: none;
+    
+}
+
 img {
+    border: 5px solid #334D5C;
+    border-radius: 5px;
     width: 200px; /* Set width to 200 pixels */
     height: auto; /* Maintain aspect ratio */
 }
@@ -170,6 +183,28 @@ body {
   box-sizing: border-box;
   background: linear-gradient(90deg, #CCCCCC 0%, #CCCCCC 25%, #CCCCCC 75%, #CCCCCC 100%);
   max-width: 100%;
+}
+
+/* CSS for Tournaments */
+#img-borderless {
+    border: 0px solid black;
+    border-radius: 5px;
+    width: 250px;
+    height: 200px;
+}
+
+
+
+#tourn-own {
+    color: red;
+    border: 5px solid red;
+    text-align: center;
+    width: 40%;
+    border-radius: 5px;
+}
+
+#tourn-cre {
+    color: red;
 }
 
 
@@ -266,11 +301,11 @@ body {
     text-align: center;
     font-size: 1.5rem;
 }
+/* Tournament List Page */
+#tourn-list {
+    font-family: LeytonTF;
+}
 
-#mod-tourn {
-    color: #334D5C;
-    font-family: Luxia;
-    padding: 10px;
-    text-align: center;
-    font-size: 1rem;
+#tourn-list a {
+    text-decoration: none;
 }

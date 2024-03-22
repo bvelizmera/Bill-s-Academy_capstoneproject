@@ -1,8 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 <h1>User Profile</h1>
-<p>Name: {{ profile.f_name }}</p>
-<p>Description: {{ profile.description }} </p>
-<p>Category: {{profile.get_category_display}} </p>
-<p> Created on: {{profile.created_on}} </p>
-<p> Last update: {{profile.updated_on}} </p>
-{% endblock content %}
+
+<div class="container">
+    <div class="row tournament">
+        <div id="signup">
+            <p>Name: <span class="profile-pag">{{ profile.f_name }} {{ profile.l_name }} </span></p>
+
+            <p>Category: <span class="profile-pag">{{profile.get_category_display}} </span></p>
+
+            <p> <span class="profile-pag">{{ profile.description }}</span></p>
+            <br>
+            <p> Created on: <span class="profile-pag">{{profile.created_on}} </span> </p>
+            <p> Last update: <span class="profile-pag">{{profile.updated_on}} </span> </p>
+            {% endblock content %}
+
+        </div>
+    </div>
+
+</div>
