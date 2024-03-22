@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from tournament import views
+from webuser import views as webuserviews
 
 urlpatterns = [
     path("", include("tournament.urls"), name="tournament-urls"),
@@ -25,4 +26,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('profile/', views.profile, name='profile'),
     path('edit-profile/', views.edit_profile, name='edit_profile'),
+    path('upload/', webuserviews.upload_image, name='upload_image'),
+    # path('images/', webuserviews.image_list, name='image_list'),
+
 ]

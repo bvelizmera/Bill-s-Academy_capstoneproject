@@ -15,9 +15,20 @@ import os
 import dj_database_url
 if os.path.isfile("env.py"):
     import env
+import cloudinary
+
+CLOUDINARY = {
+    'cloud_name': str(os.environ.get('CLOUDINARY_CLOUD_NAME')),
+    'api_key': str(os.environ.get('CLOUDINARY_API_KEY')),
+    'api_secret': str(os.environ.get("CLOUDINARY_API_SECRET"))
+}
+
+
+# cloudinary.config(cloud_name = str(os.environ.get('CLOUDINARY_CLOUD_NAME')), api_key = str(os.environ.get('CLOUDINARY_API_KEY')), api_secret=os.environ.get("CLOUDINARY_API_SECRET"))
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,12 +36,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-bvelizmera-billsacademy-8e56fgswj2d.ws-eu110.gitpod.io','.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://8000-bvelizmera-billsacademy-8e56fgswj2d.ws-eu110.gitpod.io','https://*.herokuapp.com']
+
 
 
 # Application definition
@@ -42,14 +53,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
     'django_summernote',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
     'cloudinary',
     'tournament',
+    'webuser',
 ]
 
 SITE_ID = 1
@@ -87,6 +99,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tennisacademy.wsgi.application'
+#Cloudinary Configuration
+
 
 
 # Database

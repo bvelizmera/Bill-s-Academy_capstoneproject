@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Edit Tournament</h1>
 <div id="mod-tourn" class="container">
-    <form method="post">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button id="sign-button" class="btn btn-signup right" type="submit">Save Changes</button>

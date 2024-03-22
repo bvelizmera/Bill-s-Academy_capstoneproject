@@ -5,6 +5,7 @@ from .models import Tournament, New
 from .forms import ProfileForm, TournamentForm
 from .models import User, WebUser, Tournament
 from django.urls import reverse
+import cloudinary.uploader
 # Create your views here.
 
 
@@ -81,10 +82,14 @@ def edit_profile(request):
 @permission_required('tournament.add_tournament', raise_exception=True)
 def can_add_tournament(request):
     if request.method == 'POST':
-        form = TournamentForm(request.POST)
+        form = TournamentForm(request.POST, request.FILES)
         if form.is_valid():
             tournament = form.save(commit=False)
             tournament.creator = request.user
+            if 'img_url' in request.FILES:
+                image_file = request.FILES['img_url'] # Adjust field name to img_url
+                upload_result = cloudinary.uploader.upload(image_file)
+                tournament.img_url = upload_result['secure_url']
             tournament.save()
             return redirect(('tournament_detail'), pk=tournament.pk)
     else:
@@ -97,8 +102,12 @@ def can_edit_tournament(request, pk):
     if tournament.creator != request.user:
         return HttpResponseForbidden("You do not have permission to edit this tournament.")
     if request.method == 'POST':
-        form = TournamentForm(request.POST, instance=tournament)
+        form = TournamentForm(request.POST, request.FILES, instance=tournament)
         if form.is_valid():
+            if 'img_url' in request.FILES:  # Adjust field name to img_url
+                image_file = request.FILES['img_url'] # Adjust field name to img_url
+                upload_result = cloudinary.uploader.upload(image_file)
+                tournament.img_url = upload_result['secure_url']  # Adjust field name to img_urlS
             form.save()
             return redirect('tournament_detail', pk=tournament.pk)
     else:

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 #STATUS will define the options for the different categories
 STATUS = ((1, "8U"), (2, "10U"), (3, "11U"), (4, "12U"), (5, "14U"), (6, "16U"), (7, "18U"), (8, "Open"))
@@ -35,14 +36,14 @@ class Tournament(models.Model):
     surface = models.CharField(max_length=200)
     entry_fee = models.DecimalField(max_digits=10, decimal_places=2)
     prize_money = models.DecimalField(max_digits=10, decimal_places=2)
-    category = models.CharField(max_length=50)
     sponsor = models.CharField(max_length=50)
     description = models.TextField()
     participants = models.ManyToManyField(WebUser, related_name="participatiing", blank=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
     max_participants = models.IntegerField()
-    category = models.IntegerField(choices=STATUS, blank=True)
+    category = models.IntegerField(choices=STATUS, blank=True, null=True)
+    img_url = CloudinaryField('image')
 
     class Meta:
         ordering = ["start_date"]
