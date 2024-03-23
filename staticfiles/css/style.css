@@ -72,25 +72,13 @@
 
 
 
-
-
-
-
-/* CSS for the header by ID */
-
+/* General CSS */
 
 body {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-}
-
-#img-head {
-    width: 75px;
-    height: auto;
-    border: none;
-    
 }
 
 img {
@@ -100,13 +88,23 @@ img {
     height: auto; /* Maintain aspect ratio */
 }
 
+
+/* CSS for the header by ID */
+#img-head {
+    width: 75px;
+    height: auto;
+    border: none;
+    
+}
+
+
 header {
     background-color: #CCCCCC;
     color: #C4DFE6 ;
     padding: 10px 0;
     text-align: center;
 }
-
+/* Titles css */
 h1 {
     margin: 0;
     background-color: #F5F5F5;
@@ -122,6 +120,7 @@ h2 {
     color: black;
 }
 
+/* Layout for Tournaments and News pages */
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -162,6 +161,7 @@ footer {
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     /* background-image: url('../images/e583918e-91b0-4051-b7b2-bb46a5e92c0a.jpeg'); Replace 'path/to/your/image.jpg' with the actual path to your image */
     background-size: cover; /* Cover ensures the image covers the entire viewport */
     background-position: center; /* Center the background image */
@@ -285,6 +285,24 @@ body {
     color:#334D5C;
     font-weight: bold;
     font-size: 1.5rem;
+    margin: 10px;
+    font-family: Luxia;
+}
+
+#del-button {
+    border: 5px solid red;
+    text-transform: uppercase;
+    color: red;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 10px;
+    font-family: Luxia;
+}
+
+#del-button:hover {
+    color: white;
+    background-color: red;
 }
 
 #sign-button:hover {
