@@ -28,7 +28,7 @@
                 <p class="post-subtitle">Prize Money: £{{ tournament.prize_money }}</p>
                 <p class="post-subtitle">Sponsor: {{ tournament.sponsor }}</p>
                 <p class="post-subtitle">Max. players: {{ tournament.max_ }}</p>
-                <p class="post-subtitle">Category: {{ tournament.get_category_display}}</p>
+                <p class="post-subtitle">Category: {{ tournament.get_category_display }}</p>
 
 
             </div>
@@ -42,7 +42,7 @@
             </p>
             <br>
             <p>
-                <a id="sign-button"
+                <a id="del-button"
                     class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
                     aria-current="page" href="{% url 'delete_tournament' pk=tournament.pk %}"> Delete </a>
             </p>

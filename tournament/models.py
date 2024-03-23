@@ -11,8 +11,8 @@ class WebUser(models.Model):
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    f_name = models.CharField(max_length=50)
-    l_name = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     description = models.CharField(max_length=300)
     # tournament = models.ManyToManyField(Tournament, related_name="playing-tournaments", blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
