@@ -24,10 +24,10 @@ The registration and login pages welcome and guide users in the creation and usa
 
 The theme of orange, yellow, and light pastel colors helps accentuate the decorative tennis-themed header. Incorporating contrast in background and text colors was a helpful and fun stylistic tool to enhance user experience. 
 
-- `#e24502` used for h1 and borders, and news and tournaments text.
+- `#e24502` used for h1, borders, news, and tournaments text.
 - `#ffdab9` used for the overall background.
 - `#870703` used for title of news and tournaments.
-- `#D30CD5`used for the profile user content.
+- `#D30CD5` used for the profile user content.
 
 - `blue` used for contact details.
 - `black` used for text on tournaments page.
@@ -37,11 +37,11 @@ The theme of orange, yellow, and light pastel colors helps accentuate the decora
 
 ### Font families used
 
--  Nike was used for the primary headers and titles.
+- Nike was used for the primary headers and titles.
 
-- Luxia was used for all tournaments description
+- Luxia was used for all tournament descriptions
 
-- Font Awesome icons were used for the icons for the home, collapsible navigation bar and footer.
+- Font Awesome icons were used for the icons for the home button, collapsible navigation bar, and footer.
 
 ## User Stories
 
@@ -65,24 +65,6 @@ The theme of orange, yellow, and light pastel colors helps accentuate the decora
 - As a Staff User, I want to be able to edit my created tournaments so that I can keep people up to date with the changes.
 - As a creator of a piece of News, I want to be able delete news, to make sure the content is updated.
 - As the author of a piece of news, I want to be able to modify it in case there is a mistake.
-
-
-
-
-- 
-
-
-
-
-
-
-
-
-
-- As a returning site user, I would like to easily book a workspace for a specific date and time through an intuitive online platform, so that I can plan my work schedule efficiently.
-- As a returning site user, I would like contact information, so that I can reach out to the coworking space with specific demands.
-- As a returning site user, I would like to see a calendar of upcoming networking events, workshops, and professional development opportunities hosted by the coworking space, so that I can stay engaged and connected with other charities.
-- As a returning site user, I would like to see a member directory, so that I can connect with others.
 
 ### Site Admin
 
@@ -167,44 +149,44 @@ Sign Up
 - HEADER AND NAVIGATION BAR
 
     - Header provides a clear name and logo design for the tennis academy.
-    - Navigation bar provides all the links and features available to each corresponding 	user.
+    - Navigation bar provides all the links and features available to each corresponding user.
     - Navigation bar is displayed on all pages for easy access.
 
 ![screenshot](documentation/features/feature01.png)
 
 - FOOTER 
 
-    - Provides another logo for the academy
-    - Displays my LinkedIn and GitHub
-    - Displayed on all pages
+    - Provides another logo for the academy.
+    - Displays my LinkedIn and GitHub.
+    - Displayed on all pages.
 
 ![screenshot](documentation/features/feature02.png)
 
-- Landin Page
+- Landing Page
 
-    - The landing page welcomes the users with some information on what to expect and recents and developments.
-	- The navigation bar allows the user to log in and register, but also allowing to see all the upcoming tournaments.
+    - The landing page welcomes the users with information on what to expect and recent developments.
+	- The navigation bar allows the user to log in and register, as well as see all the upcoming tournaments.
 	- If logged in, depending on user or staff, the navigation will have more or less features.
-	- They can click on each news to view more details. If the user is classified as staff user, then depending on if they are the author or not, they can edit or delete the piece of news.
+	- Users can click on each news snippet to view more details. If the user is classified as a staff user, they have editing rights of the pieces of news that they drafted.
 		- Staff
 		- Normal user
 
 - Tournaments page
-	- They can view all available and upcoming tournaments with a brief information for each.
-	- They can click on each tournament to view more details. If the user is classified as staff user, then depending on if they are the author or not, they can edit or delete the piece of news.
+	- Users can view all available and upcoming tournaments with a brief description attached for each tournament.
+	- Users can click on each tournament to view more details. If the user is classified as a staff user, they have editing rights of the tournament posting that they drafted. 
 
 - Profile Page/Edit Profile Page
-	- They can view what information they have available on their current profile
-	- They can edit the information available on their current profile.
+	- Users can view what information they have available on their current profile
+	- Users can edit the information available on their current profile.
 - Add Tournament/Add News Page
 	- Both pages provide a form with their respective fields to add and create.
-	- However, the news will be moderated by the admin user to ensure qualty posts.
+	- The news will be moderated by the admin user to ensure quality posts.
 - Log out Page
 	- This page provides a clear message to allow the user to log out.
 - Log In / Register Page
-	- Both pages used Allauth as a sign in and registration method. Thus the template was derived from the built in system.
-	- User must create an account to see their profile.
-	- Staff user must log in to add, edit and delete news and tournaments.
+	- Both pages used Allauth as a sign in and registration method. Thus, the template was derived from the built in system.
+	- Users must create an account to see their profile.
+	- Staff users must log in to add, edit, and delete news and tournaments.
 
 
 
@@ -214,7 +196,7 @@ Sign Up
     - The players will be able to register and unregister to a tournament with a cut off date.
 	- Players will be able to filter tournaments by category and date.
 - Academy Details
-	- Although essential it was not made due to time constraints. This page will have extra information about the academy.
+	- Although essential, this page has not yet been created due to time constraints. This page will have extra information about the academy.
 
 ## Utilised technologies and tools for the project
 1. Balsamiq - Wireframing tool.
