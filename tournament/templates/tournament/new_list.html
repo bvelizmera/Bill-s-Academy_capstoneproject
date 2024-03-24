@@ -5,57 +5,65 @@
 
 
 <div class="container">
-    <div id="tourn-list" class="container tournament">
-        <div id="ul-center" class="row">
-            <h2>Welcome to Fire Tennis Academy!</h2>
-            <p>
+    <div class="container">
+        <div id="tourn-list" class="container tournament">
+            <div id="ul-center" class="row">
+                <h2>Welcome to Fire Tennis Academy!</h2>
+                <p>
 
-                Get ready to ace your game and join our thriving tennis community! Here's what you can expect:
-                <br>
-                1. Stay Updated: Our staff team keeps you informed with news and updates. While they manage the content,
-                rest assured it's all vetted by our admin for accuracy.
-                <br>
-                2. Exciting Tournaments: Compete in tournaments tailored for all skill levels. Our staff creates, edits,
-                and manages these events to keep the competition lively.
-                <br>
-                3. Member Registration: New members, sign up and create your profile on our website to personalize your
-                experience and connect with fellow players.
-                <br>
-                We're thrilled to have you here! If you have any questions, our staff is here to help. See you on the
-                courts!
-            </p>
+                    Get ready to ace your game and join our thriving tennis community! Here's what you can expect:
+                    <br>
+                    1. Stay Updated: Our staff team keeps you informed with news and updates. While they manage the
+                    content,
+                    rest assured it's all vetted by our admin for accuracy.
+                    <br>
+                    2. Exciting Tournaments: Compete in tournaments tailored for all skill levels. Our staff creates,
+                    edits,
+                    and manages these events to keep the competition lively.
+                    <br>
+                    3. Member Registration: New members, sign up and create your profile on our website to personalize
+                    your
+                    experience and connect with fellow players.
+                    <br>
+                    We're thrilled to have you here! If you have any questions, our staff is here to help. See you on
+                    the
+                    courts!
+                </p>
+            </div>
         </div>
     </div>
-    <h1>News and Updates</h1>
-    <div id="tourn-list" class="container tournament">
-        <div id="ul-center" class="row">
+    <div class="container">
+        <h1>News and Updates</h1>
+    </div>
 
-            <div id="ul-center" class="">
-                {% for new in object_list %}
-                <a href="{% url 'new_detail' new.pk %}" class="post-link">
-                    <h2>{{new.title}}</h2>
-                </a>
-                <div>{{new.content|slice:":200"}}... </vi>
-                    <p>Publication date: {{new.created_on}}</p>
-                </div>
-                {% if request.user == new.creator %}
-                <div id="ul-center">
-                    <p id="par-own" class="container">Owner</p>
+    <div class="container">
+        {% for new in object_list %}
+        <div id="tourn-list"class="container tournament">
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'new_detail' new.pk %}" class="post-link">
+                        <h2>{{new.title}}</h2>
+                    </a>
+                    <p>{{new.content|slice:"200"}}...</p>
+    
+                    {% if request.user == new.creator %}
+                    <p id="tourn-own">Owner</p>
                     {% else %}
                     Creator: <span id="tourn-cre">{{new.creator}}</span>
+    
                     {% endif %}
-                    <img id="img-borderless" src="{{ new.img_url }}">
                 </div>
-
-                {% endfor %}
+                <div class="col">
+                    <img id="img-borderless" src="{{ new.img_url }}">
+    
+                </div>
             </div>
-
-
+    
         </div>
-
-
-
+        {% endfor %}
+    
     </div>
+    
 
 
 </div>
