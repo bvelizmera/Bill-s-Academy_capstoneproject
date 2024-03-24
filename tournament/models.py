@@ -23,7 +23,7 @@ class WebUser(models.Model):
     category = models.IntegerField(choices=STATUS, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.f_name} {self.l_name} - {self.user}"
+        return f"{self.first_name} {self.last_name} - {self.user}"
 
 
 
