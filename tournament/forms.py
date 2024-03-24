@@ -40,7 +40,7 @@ class TournamentForm(forms.ModelForm):
         if prize_money is not None and prize_money < 0:
             self.add_error('prize_money', forms.ValidationError("Prize money cannot be negative."))
         
-        if max_participants ist not None and max_participants < 4:
+        if max_participants is not None and max_participants < 4:
             self.add_error('max_participants', forms.ValidationError("It is required a minimum of 4 players for this tournament."))
 
         return cleaned_data
