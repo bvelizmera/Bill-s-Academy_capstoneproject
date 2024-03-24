@@ -26,6 +26,7 @@ class TournamentForm(forms.ModelForm):
         end_date = cleaned_data.get('end_date')
         entry_fee = cleaned_data.get('entry_fee')
         prize_money = cleaned_data.get('prize_money')
+        max_participants = cleaned_data.get('max_participants')
 
         # Check if start date is after end date
         if start_date and end_date and start_date > end_date:
@@ -38,6 +39,9 @@ class TournamentForm(forms.ModelForm):
         # Check if prize money is negative
         if prize_money is not None and prize_money < 0:
             self.add_error('prize_money', forms.ValidationError("Prize money cannot be negative."))
+        
+        if max_participants ist not None and max_participants < 4:
+            self.add_error('max_participants', forms.ValidationError("It is required a minimum of 4 players for this tournament."))
 
         return cleaned_data
 
