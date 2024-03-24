@@ -12,7 +12,8 @@
 <html class="h-100" lang="en">
 
 <head>
-    <title>Bill's Academy</title>
+    <title>Fire Tennis Academy</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'icons/favico.ico' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
@@ -37,9 +38,13 @@
         <a href="{%url 'home'%}">
             <div class="container-fluid justify-content-center">
                 <div class="row text-center">
-                    <div class="col"><div class="d-none d-md-block">TENNIS</div></div>
-                    <div class="col"><img id="img-head" src="{% static 'images/logo.png' %}"> </div>
-                    <div class="col"><div class="d-none d-md-block">ACADEMY</div></div>
+                    <div class="col">
+                        <div id="head-1" class="d-none d-sm-block">TENNIS</div>
+                    </div>
+                    <div class="col"><img id="img-head" src="{% static 'images/logo1.png'%}"> </div>
+                    <div class="col">
+                        <div id="head-1" class="d-none d-sm-block">ACADEMY</div>
+                    </div>
                 </div>
             </div>
         </a>
@@ -73,6 +78,9 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'add_tournament' %}">Add Tournament</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'add_new' %}">Add New</a>
                         {% endif %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
@@ -101,8 +109,24 @@
     </main>
 
     <footer>
-        Created by Bill Veliz
-    </footer>
+        <div class="container-footer">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="{% static 'images/logo_footer.png' %}" alt="Logo">
+            </div>
+            <div class="footer-links">
+              <ul>
+                <li><a href="https://github.com/bvelizmera">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/bill-anthony-veliz-mera-255145284/">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-info">
+            <p>&copy; Made by Bill Veliz</p>
+          </div>
+        </div>
+      </footer>
+      
 
 </body>
 

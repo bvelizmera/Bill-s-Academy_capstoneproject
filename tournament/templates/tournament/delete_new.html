@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Delete Tournament</h1>
+<div id="del-tourn" class="container">
+    <p>Are you sure you want to delete this new?</p>
+    <form method="post" action="{% url 'delete_new' pk=new.pk %}">
+        {% csrf_token %}
+        <input id="sign-button" class="btn btn-signup right" type="submit" value="Delete">
+    </form>
+</div>
+{% endblock content %}

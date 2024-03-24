@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Edit Tournament</h1>
+<div id="signup" class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            
+        <!-- Load Crispy Forms template tags -->
+        {% load crispy_forms_tags %}
+        
+        <!-- Render the form using the |crispy filter -->
+        {{ form|crispy }}
+        <button id="sign-button" class="btn btn-signup right" type="submit">Save Changes</button>
+    </form>
+</div>
+
+
+{% endblock content %}

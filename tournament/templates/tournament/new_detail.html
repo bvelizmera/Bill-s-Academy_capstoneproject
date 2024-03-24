@@ -2,25 +2,52 @@
 {% load static %}
 
 <style>
-img {
-    width: 300pxvw; /* Set width to 200 pixels */
-    height: auto; /* Maintain aspect ratio */
-}
-
+    img {
+        width: 300px;
+        /* Set width to 200 pixels */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
 </style>
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <div class="d-none d-md-block col-md-6 masthead-image">
-                    <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
-                </div>
-                <!-- News Title -->
-                <h1 class="post-title">{{ new.title }}</h1>
-                <div class="container">{{new.content}}</div>
+<h1 class="post-title">{{ new.title }}</h1>
+<div class="container">
+
+
+    <div class="row tournament">
+        <div id="signup">{{ new.content }}</div>
+        <div class="col">
+            <div id="signup">
+
                 <!-- Tournament Details -->
+                <p class="post_subtitle">Published on {{ new.created_on }}</p>
+                <p class="post-subtitle">Author: {{ new.creator }}</p>
             </div>
+        </div>
+        <div class="col">
+            {% if request.user == new.creator %}
+            <p>
+                <a id="sign-button"
+                    class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'edit_new' pk=new.pk %}"> Edit </a>
+            </p>
+            <br>
+            <p>
+                <a id="del-button"
+                    class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'delete_new' pk=new.pk %}"> Delete </a>
+            </p>
+            {% endif %}
+        </div>
+
+        <div class="col">
+            <div id="signup">
+                <img id="img-borderless" src="{{ new.img_url }}">
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
-    {% endblock content %}
+{% endblock content %}

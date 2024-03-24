@@ -1,19 +1,65 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>News</h1>
+<h1>Home</h1>
+
 
 <div class="container">
-    {% for new in object_list %}
-    <div class="news">
-        <a href="{% url 'new_detail' new.pk %}" class="post-link">
-            <h2>{{ new.title }}</h2>
-        </a>
-        <p>{{new.content|slice:":200"}}... </p>
-        <p>Publication date: {{new.created_on}}</p>
+    <div id="tourn-list" class="container tournament">
+        <div id="ul-center" class="row">
+            <h2>Welcome to Fire Tennis Academy!</h2>
+            <p>
+
+                Get ready to ace your game and join our thriving tennis community! Here's what you can expect:
+                <br>
+                2. Stay Updated: Our staff team keeps you informed with news and updates. While they manage the content,
+                rest assured it's all vetted by our admin for accuracy.
+                <br>
+                3. Exciting Tournaments: Compete in tournaments tailored for all skill levels. Our staff creates, edits,
+                and manages these events to keep the competition lively.
+                <br>
+                4. Member Registration: New members, sign up and create your profile on our website to personalize your
+                experience and connect with fellow players.
+                <br>
+                We're thrilled to have you here! If you have any questions, our staff is here to help. See you on the
+                courts!
+            </p>
+        </div>
+    </div>
+    <h1>News and Updates</h1>
+    <div id="tourn-list" class="container tournament">
+        <div id="ul-center" class="row">
+
+            <div id="ul-center" class="">
+                {% for new in object_list %}
+                <a href="{% url 'new_detail' new.pk %}" class="post-link">
+                    <h2>{{new.title}}</h2>
+                </a>
+                <div>{{new.content|slice:":200"}}... </vi>
+                    <p>Publication date: {{new.created_on}}</p>
+                </div>
+                {% if request.user == new.creator %}
+                <div id="ul-center">
+                    <p id="par-own" class="container">Owner</p>
+                    {% else %}
+                    Creator: <span id="tourn-cre">{{new.creator}}</span>
+                    {% endif %}
+                    <img id="img-borderless" src="{{ new.img_url }}">
+                </div>
+
+                {% endfor %}
+            </div>
+
+
+        </div>
+
+
+
     </div>
 
-    {% endfor %}
+
 </div>
+
+
 
 {% endblock content %}

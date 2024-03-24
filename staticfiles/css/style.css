@@ -31,6 +31,10 @@
     src: url(../fonts/NIKE.ttf)
 }
 
+@font-face {
+    font-family: CreatoDisplay;
+    src: url(../fonts/CreatoDisplay-Bold.otf)
+}
 
 .row {
     margin: 0;
@@ -42,10 +46,12 @@
 
 :root{
     --primary: #2E4057 ;
-    --secondary: #334D5C;
+    /* --light: #870703; */
+    /* --secondary:#f24f04;  */
+    --secondary: #e24502;
     --accent: #D30CD5;
     --dark: #010100;
-    --light:  #F5F5F5;
+    --light:#ffdab9;
 
 
     --bs-body-font-family: poppins, sans-serif;
@@ -57,7 +63,7 @@
 #appname {
     width: 100%;
     font-family: Nike;
-    font-size: clamp(1rem, 3rem, 10rem);
+    font-size: clamp(1rem, 6rem, 10rem);
     color: var(--secondary);
     text-shadow: 3px 3px var(--light);
     text-transform: uppercase;
@@ -78,11 +84,17 @@ body {
     font-family: 'Courier New', Courier, monospace, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #fffacd;
+    width: 100vw;
+    /* background-image: url('../images/e583918e-91b0-4051-b7b2-bb46a5e92c0a.jpeg'); Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Cover ensures the image covers the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
 }
 
+
 img {
-    border: 5px solid #334D5C;
+    border: 5px solid #e24502;
     border-radius: 5px;
     width: 200px; /* Set width to 200 pixels */
     height: auto; /* Maintain aspect ratio */
@@ -91,7 +103,7 @@ img {
 
 /* CSS for the header by ID */
 #img-head {
-    width: 75px;
+    width: 250px;
     height: auto;
     border: none;
     
@@ -99,17 +111,19 @@ img {
 
 
 header {
-    background-color: #CCCCCC;
+    background-color: #ffdab9;
     color: #C4DFE6 ;
     padding: 10px 0;
     text-align: center;
+    background-image: url('https://res.cloudinary.com/dxivyhww6/image/upload/v1711212847/2548485f-3a8a-4714-b584-73d4738805fc_edrxsn.jpg');
+
 }
 /* Titles css */
 h1 {
     margin: 0;
-    background-color: #F5F5F5;
-    border: 10px solid #334D5C;
-    color: #334D5C;
+    background-color: #ffdab9;
+    border: 10px solid #e24502;
+    color: #e24502;
     font-family: Nike;
     padding: 10px;
     text-align: center;
@@ -117,7 +131,8 @@ h1 {
 }
 
 h2 {
-    color: black;
+    color: #870703;
+    font-family: Nike;
 }
 
 /* Layout for Tournaments and News pages */
@@ -130,7 +145,7 @@ h2 {
 .tournament, .news {
     background-color: #fff;
     border-radius: 8px;
-    border: 7px solid #334D5C;
+    border: 7px solid #e24502;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
@@ -144,7 +159,7 @@ h2 {
     margin: 10px 0;
 }
 
-
+/* 
 
 footer {
     background-color: #333;
@@ -154,20 +169,9 @@ footer {
     position: relative;
     bottom: 0;
     width: 100vw;
-}
+} */
 
 /* Trial */
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    /* background-image: url('../images/e583918e-91b0-4051-b7b2-bb46a5e92c0a.jpeg'); Replace 'path/to/your/image.jpg' with the actual path to your image */
-    background-size: cover; /* Cover ensures the image covers the entire viewport */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-}
-
 
 
 /* Navbar css */
@@ -178,10 +182,10 @@ body {
 #navbar-alt {
   /* mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%); */
   margin: 0 auto;
-  border-top: 2px solid #334D5C;
-  border-bottom: 2px solid #334D5C;
+  border-top: 2px solid #e24502;
+  border-bottom: 2px solid #e24502;
   box-sizing: border-box;
-  background: linear-gradient(90deg, #CCCCCC 0%, #CCCCCC 25%, #CCCCCC 75%, #CCCCCC 100%);
+  background: linear-gradient(90deg, #ffdab9 0%, #ffdab9 25%, #ffdab9 75%, #ffdab9 100%);
   max-width: 100%;
 }
 
@@ -190,7 +194,7 @@ body {
     border: 0px solid black;
     border-radius: 5px;
     width: 250px;
-    height: 200px;
+    height: auto;
 }
 
 
@@ -210,16 +214,23 @@ body {
 
 #ul-left {
   text-align: left;
-  /* background: linear-gradient(90deg, #CCCCCC 0%, #CCCCCC 25%, #CCCCCC 75%, #CCCCCC 100%); */
+  /* background: linear-gradient(90deg, #ffdab9 0%, #ffdab9 25%, #ffdab9 75%, #ffdab9 100%); */
 }
 #ul-center {
     text-align: center;
 }
 
-#ul-center img {
-    height: 100px;
-    width: auto;
+#par-own {
+    color: red;
+    border: 5px solid red;
+    text-align: center;
+    position: center;
+    width: 40%;
+    border-radius: 5px;
 }
+
+
+
 
 #ul-right {
     text-align: right;
@@ -233,7 +244,7 @@ body {
   padding: 18px;
   font-family: "Nike";
   text-transform:uppercase;
-  color: rgba(0, 35, 122, 0.5);
+  color: rgba(134, 7, 1, 0.5);
   font-size: 18px;
   text-decoration: none;
   display: block;
@@ -242,14 +253,14 @@ body {
 #navbar-alt a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 0.1);
-  color: rgba(0, 35, 122, 0.7);
+  color: rgba(134, 7, 1, 0.7);
   border-radius: 10%;
 }
 
 /* Design for Sign In Page */
 
 #signin {
-    color: #334D5C;
+    color: #e24502;
     font-family: Luxia;
     padding: 10px;
     text-align: center;
@@ -259,7 +270,7 @@ body {
 /* Design for Sign Up Page */
 
 #signup {
-    color: #334D5C;
+    color: #e24502;
     font-family: Luxia;
     padding: 10px;
     text-align: center;
@@ -271,7 +282,7 @@ body {
 
 #signout {
     margin: 0;
-    color: #334D5C;
+    color: #e24502;
     font-family: Luxia;
     padding: 10px;
     text-align: center;
@@ -280,9 +291,9 @@ body {
 }
 
 #sign-button {
-    border: 5px solid #334D5C;
+    border: 5px solid #e24502;
     text-transform: uppercase;
-    color:#334D5C;
+    color:#e24502;
     font-weight: bold;
     font-size: 1.5rem;
     margin: 10px;
@@ -306,14 +317,14 @@ body {
 }
 
 #sign-button:hover {
-    background-color: #334D5C;
-    color:#CCCCCC;
+    background-color: #e24502;
+    color:#ffdab9;
 }
 
 /* Css for delete/edition tournament pages */
 
 #del-tourn {
-    color: #334D5C;
+    color: #e24502;
     font-family: Luxia;
     padding: 10px;
     text-align: center;
@@ -321,9 +332,83 @@ body {
 }
 /* Tournament List Page */
 #tourn-list {
-    font-family: LeytonTF;
+    font-family: CreatoDisplay;
 }
 
 #tourn-list a {
     text-decoration: none;
 }
+
+#contact {
+    color: blue;
+    font-family: Luxia;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* footer generated with help of chatgpt*/
+
+footer {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding at the top and bottom */
+    font-family: Luxia;
+  }
+  
+  .container-footer {
+    max-width: 1200px; /* Maximum width of the footer content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 15px; /* Padding on the sides */
+  }
+  
+  .footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .footer-logo img {
+    width: 150px; /* Adjust the width of the logo */
+    border: none;
+  }
+  
+  .footer-links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .footer-links ul li {
+    display: inline-block; /* Display links horizontally */
+    margin-right: 20px; /* Add spacing between links */
+  }
+  
+  .footer-links ul li:last-child {
+    margin-right: 0; /* Remove margin from the last link */
+  }
+  
+  .footer-links ul li a {
+    color: #fff; /* White color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+  }
+  
+  .footer-info p {
+    margin-top: 10px; /* Add spacing between content */
+    text-align: center; /* Center align text */
+  }
+
+  @media (max-width: 768px) {
+
+#img-head{
+    max-width: 100px;
+    height:auto;
+}
+
+#head-1 {
+    font-size: 3rem;
+}
+
+
+
+  }

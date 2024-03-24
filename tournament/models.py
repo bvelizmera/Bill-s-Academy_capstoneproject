@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from phonenumber_field.modelfields import PhoneNumberField
 
 #STATUS will define the options for the different categories
 STATUS = ((1, "8U"), (2, "10U"), (3, "11U"), (4, "12U"), (5, "14U"), (6, "16U"), (7, "18U"), (8, "Open"))
@@ -37,13 +38,15 @@ class Tournament(models.Model):
     entry_fee = models.DecimalField(max_digits=10, decimal_places=2)
     prize_money = models.DecimalField(max_digits=10, decimal_places=2)
     sponsor = models.CharField(max_length=50)
-    description = models.CharField(max_length=400)
+    description = models.TextField(max_length=400)
     participants = models.ManyToManyField(WebUser, related_name="participatiing", blank=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     updated_on = models.DateTimeField(auto_now=True, null=True)
     max_participants = models.IntegerField()
     category = models.IntegerField(choices=STATUS, blank=True, null=True)
     img_url = CloudinaryField('image')
+    phone_number = PhoneNumberField()
+    email = models.EmailField()
 
     class Meta:
         ordering = ["start_date"]
@@ -62,15 +65,15 @@ class Tournament(models.Model):
 OPTIONS = ((0,"Draft"), (1, "Published"))
 class New(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now_add=True)
+    creator = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField(max_length=1000)
+    created_on = models.DateTimeField(auto_now_add=True, null=True)
+    updated_on = models.DateTimeField(auto_now=True, null=True)
     status = models.IntegerField(choices=OPTIONS, default=0)
+    img_url = CloudinaryField('image')
 
     class Meta:
-        ordering = ["created_on"]
+        ordering = ["updated_on"]
 
     def __str__(self):
         return f"{self.title} was created on {self.created_on}. Last update {self.updated_on}"

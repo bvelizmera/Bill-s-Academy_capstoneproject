@@ -1,5 +1,5 @@
 from django import forms
-from .models import WebUser, Tournament
+from .models import WebUser, Tournament, New
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 
@@ -12,7 +12,7 @@ class ProfileForm(forms.ModelForm):
 class TournamentForm(forms.ModelForm):  
     class Meta:
         model = Tournament
-        fields = ['name', 'start_date','end_date','location', 'surface', 'sponsor', 'entry_fee', 'prize_money', 'category','description', 'max_participants','img_url']
+        fields = ['name', 'start_date','end_date','location', 'surface', 'sponsor', 'entry_fee', 'prize_money', 'category','description', 'max_participants','img_url','phone_number','email']
         widgets = {
             'start_date': forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'}),
             'end_date': forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'}),
@@ -40,3 +40,8 @@ class TournamentForm(forms.ModelForm):
             self.add_error('prize_money', forms.ValidationError("Prize money cannot be negative."))
 
         return cleaned_data
+
+class NewForm(forms.ModelForm):
+    class Meta:
+        model = New
+        fields = ['title', 'content','img_url']

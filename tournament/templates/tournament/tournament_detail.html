@@ -46,14 +46,24 @@
                     class="btn btn-signup right nav-link {% if request.path == logout_url %}active{% endif %}"
                     aria-current="page" href="{% url 'delete_tournament' pk=tournament.pk %}"> Delete </a>
             </p>
+            {% endif %}
+            <div id="contact">
+                <p>Contact us for registration on:</p>
+                <p class="post-subtitle">{{ tournament.phone_number }}</p>
+                <p class="post-subtitle">{{ tournament.email }}</p>
+            </div>
         </div>
-        {% endif %}
+
         <div class="col">
             <div id="signup">
                 <img id="img-borderless" src="{{ tournament.img_url }}">
             </div>
             <div id="signup">
-                {{ tournament.description }}
+                <p class="post-subtitle">
+                    {{ tournament.description }}
+                </p>
+                <br>
+
             </div>
         </div>
     </div>
