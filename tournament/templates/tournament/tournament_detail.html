@@ -1,14 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
 
-<style>
-    img {
-        width: 200px;
-        /* Set width to 200 pixels */
-        height: auto;
-        /* Maintain aspect ratio */
-    }
-</style>
+
 
 <h1 class="post-title">{{ tournament.name }}</h1>
 <div class="container">
@@ -17,7 +10,7 @@
         <!-- Tournament Title -->
         <div class="col">
 
-            <div id="signup">
+            <div class="signup">
                 <!-- Tournament Details -->
                 <p class="post_subtitle"> Start Date: {{ tournament.start_date }}</p>
                 <p class="post_subtitle">End Date: {{ tournament.end_date }}</p>
@@ -54,10 +47,10 @@
         </div>
 
         <div class="col">
-            <div id="signup">
-                <img id="img-borderless" src="{{ tournament.img_url }}">
+            <div class="signup">
+                <img class="img-tourn-det" src="{{ tournament.img_url }}" alt="tournament_image">
             </div>
-            <div id="signup">
+            <div class="signup">
                 <p class="post-subtitle">
                     {{ tournament.description }}
                 </p>

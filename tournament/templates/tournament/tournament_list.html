@@ -6,7 +6,7 @@
 
 <div class="container">
     {% for tournament in object_list %}
-    <div id="tourn-list"class="container tournament">
+    <div class="container tournament tourn-list">
         <div class="row">
             <div class="col">
                 <a href="{% url 'tournament_detail' tournament.pk %}" class="post-link">
@@ -18,14 +18,14 @@
                 <p>Prize: £{{tournament.prize_money}} </p>
 
                 {% if request.user == tournament.creator %}
-                <p id="tourn-own">Owner</p>
+                <p class="tourn-own">Owner</p>
                 {% else %}
-                Creator: <span id="tourn-cre">{{tournament.creator}}</span>
+                Creator: <span class="tourn-cre">{{tournament.creator}}</span>
 
                 {% endif %}
             </div>
             <div class="col">
-                <img id="img-borderless" src="{{ tournament.img_url }}">
+                <img class="img-borderless" src="{{ tournament.img_url }}" alt="tournament-image">
                 <p> Category: {{ tournament.get_category_display }} </p>
 
             </div>

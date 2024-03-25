@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="container">
-        <div id="tourn-list" class="container tournament">
+        <div class="container tournament tourn-list">
             <div id="ul-center" class="row">
                 <h2>Welcome to Fire Tennis Academy!</h2>
                 <p>
@@ -38,7 +38,7 @@
 
     <div class="container">
         {% for new in object_list %}
-        <div id="tourn-list"class="container tournament">
+        <div class="container tournament tourn-list">
             <div class="row">
                 <div class="col">
                     <a href="{% url 'new_detail' new.pk %}" class="post-link">
@@ -47,14 +47,14 @@
                     <p>{{new.content|slice:"200"}}...</p>
     
                     {% if request.user == new.creator %}
-                    <p id="tourn-own">Owner</p>
+                    <p class="tourn-own">Owner</p>
                     {% else %}
-                    Creator: <span id="tourn-cre">{{new.creator}}</span>
+                    Creator: <span class="tourn-cre">{{new.creator}}</span>
     
                     {% endif %}
                 </div>
                 <div class="col">
-                    <img id="img-tourn_pag" src="{{ new.img_url }}">
+                    <img class="img-tourn_pag" src="{{ new.img_url }}" alt="tourn-img">
     
                 </div>
             </div>
