@@ -93,12 +93,12 @@ body {
 }
 
 
-img {
+/* img {
     border: 5px solid #e24502;
     border-radius: 5px;
-    width: 200px; /* Set width to 200 pixels */
-    height: auto; /* Maintain aspect ratio */
-}
+    width: 200px;
+    height: auto;
+} */
 
 
 /* CSS for the header by ID */
@@ -130,6 +130,12 @@ h1 {
     text-transform: uppercase;
 }
 
+.img-tourn-det {
+    width: 300px;
+    /* Set width to 200 pixels */
+    height: auto;
+    /* Maintain aspect ratio */
+}
 h2 {
     color: #870703;
     font-family: Nike;
@@ -190,22 +196,28 @@ footer {
 }
 
 /* CSS for Tournaments */
-#img-borderless {
+.img-borderless {
     border: 0px solid black;
     border-radius: 5px;
     width: 250px;
     height: auto;
 }
 
-#img-tourn_pag {
+.img-tourn_pag {
     border: 0px solid black;
     border-radius: 5px;
     width: 200px;
     height: auto;
 }
 
+.img-new-det {
+    width: 300px;
+    /* Set width to 200 pixels */
+    height: auto;
+    /* Maintain aspect ratio */
+}
 
-#tourn-own {
+.tourn-own {
     color: red;
     border: 5px solid red;
     text-align: center;
@@ -213,7 +225,7 @@ footer {
     border-radius: 5px;
 }
 
-#tourn-cre {
+.tourn-cre {
     color: red;
 }
 
@@ -275,7 +287,7 @@ footer {
 
 /* Design for Sign Up Page */
 
-#signup {
+.signup {
     color: #e24502;
     font-family: Luxia;
     padding: 10px;
@@ -337,11 +349,11 @@ footer {
     font-size: 1.5rem;
 }
 /* Tournament List Page */
-#tourn-list {
+.tourn-list {
     font-family: CreatoDisplay;
 }
 
-#tourn-list a {
+.tourn-list a {
     text-decoration: none;
 }
 
@@ -411,7 +423,7 @@ footer {
     height:auto;
 }
 
-#head-1 {
+.head-1 {
     font-size: 3rem;
 }
 
