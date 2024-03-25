@@ -55,6 +55,21 @@
         </a>
     </header>
 
+    <!-- Display messages -->
+    {% if messages %}
+    <div class="container signup">
+        <div class="row">
+            <div class="col">
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
     <main>
         <nav id="navbar-alt" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">

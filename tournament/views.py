@@ -6,7 +6,12 @@ from .forms import ProfileForm, TournamentForm, NewForm
 from .models import User, WebUser, Tournament
 from django.urls import reverse
 import cloudinary.uploader
+from django.contrib import messages
 # Create your views here.
+
+
+
+
 
 
 def homepage(request):
@@ -84,6 +89,7 @@ def edit_profile(request):
     return render(request, 'edit_profile.html', {'form': form})
 
 
+
 @login_required
 @permission_required('tournament.add_tournament', raise_exception=True)
 def can_add_tournament(request):
@@ -94,11 +100,17 @@ def can_add_tournament(request):
             tournament.creator = request.user
             if 'img_url' in request.FILES:
                 image_file = request.FILES['img_url']
-                # Adjust field name to img_url
                 upload_result = cloudinary.uploader.upload(image_file)
                 tournament.img_url = upload_result['secure_url']
             tournament.save()
-            return redirect(('tournament_detail'), pk=tournament.pk)
+            
+            # Add success notification
+            messages.success(request, 'Tournament added successfully!')
+
+            return redirect('tournament_detail', pk=tournament.pk)
+        else:
+            # Add error notification if form is not valid
+            messages.error(request, 'Error occurred while adding tournament. Please check the form and try again.')
     else:
         form = TournamentForm()
     return render(request, 'tournament/add_tournament.html', {'form': form})
@@ -109,20 +121,23 @@ def can_edit_tournament(request, pk):
     tournament = get_object_or_404(Tournament, pk=pk)
     if tournament.creator != request.user:
         return HttpResponseForbidden("You do not have permission to edit this tournament.")
+    
     if request.method == 'POST':
         form = TournamentForm(request.POST, request.FILES, instance=tournament)
         if form.is_valid():
             if 'img_url' in request.FILES:
-                # Adjust field name to img_url
                 image_file = request.FILES['img_url']
-                # Adjust field name to img_url
                 upload_result = cloudinary.uploader.upload(image_file)
                 tournament.img_url = upload_result['secure_url']
-                # Adjust field name to img_urlS
             form.save()
+            
+            # Add success notification
+            messages.success(request, 'Tournament updated!')
+
             return redirect('tournament_detail', pk=tournament.pk)
     else:
         form = TournamentForm(instance=tournament)
+    
     return render(request, 'tournament/edit_tournament.html', {'form': form})
 
 
@@ -131,10 +146,16 @@ def can_delete_tournament(request, pk):
     tournament = get_object_or_404(Tournament, pk=pk)
     if tournament.creator != request.user:
         return HttpResponseForbidden("You do not have permission to delete this tournament.")
+    
     if request.method == 'POST':
         tournament.delete()
+        
+        # Add success notification
+        messages.success(request, 'Tournament deleted!')
+
         return redirect('tournaments')
         # Redirect to a suitable page after deletion
+    
     return render(request, 'tournament/delete_tournament.html', {'tournament': tournament})
 
 
@@ -148,13 +169,17 @@ def can_add_new(request):
             new.creator = request.user
             if 'img_url' in request.FILES:
                 image_file = request.FILES['img_url']
-                # Adjust field name to img_url
                 upload_result = cloudinary.uploader.upload(image_file)
                 new.img_url = upload_result['secure_url']
             new.save()
-            return redirect(('new_detail'), pk=new.pk)
+            
+            # Add success notification
+            messages.success(request, 'News added successfully!')
+
+            return redirect('new_detail', pk=new.pk)
     else:
         form = NewForm()
+    
     return render(request, 'tournament/add_new.html', {'form': form})
 
 
@@ -163,20 +188,23 @@ def can_edit_new(request, pk):
     new = get_object_or_404(New, pk=pk)
     if new.creator != request.user:
         return HttpResponseForbidden("You do not have permission to edit this new.")
+    
     if request.method == 'POST':
         form = NewForm(request.POST, request.FILES, instance=new)
         if form.is_valid():
             if 'img_url' in request.FILES:
-                # Adjust field name to img_url
                 image_file = request.FILES['img_url']
-                # Adjust field name to img_url
                 upload_result = cloudinary.uploader.upload(image_file)
                 new.img_url = upload_result['secure_url']
-                # Adjust field name to img_urlS
             form.save()
+            
+            # Add success notification
+            messages.success(request, 'News updated successfully!')
+
             return redirect('new_detail', pk=new.pk)
     else:
         form = NewForm(instance=new)
+    
     return render(request, 'tournament/edit_new.html', {'form': form})
 
 
@@ -185,8 +213,14 @@ def can_delete_new(request, pk):
     new = get_object_or_404(New, pk=pk)
     if new.creator != request.user:
         return HttpResponseForbidden("You do not have permission to delete this new.")
+    
     if request.method == 'POST':
         new.delete()
+        
+        # Add success notification
+        messages.success(request, 'News deleted successfully!')
+
         return redirect('home')
         # Redirect to a suitable page after deletion
+    
     return render(request, 'tournament/delete_new.html', {'new': new})
