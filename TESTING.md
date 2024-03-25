@@ -91,3 +91,50 @@ In this case, it was tested by using Google Dev Tools. To carry out the responsi
 2. Click on inspect element.
 3. Then in the middle of the page, it will show the screen size, and we can select the preferred option. In this case, responsive was chosen to drag and see how it behaves for different screen sizes.
 
+All pages will be shown in 3 screen sizes:  Iphone SE, Ipad Air and Desktop
+
+### Home Page
+ ![home page](documentation/testing/home.gif)
+
+### Tournaments Page
+
+![tournaments](documentation/testing/tournaments.gif)
+
+### Edit Profile Page
+
+![edit profile](documentation/testing/edit%20profile.gif)
+
+### Add Tournaments
+
+![add tournaments](documentation/testing/add%20tournament.gif)
+
+### Add News
+
+![add news](documentation/testing/add%20news.gif)
+
+### Log Out
+
+![log out](documentation/testing/log%20out.gif)
+
+### Register
+
+![register](documentation/testing/sign%20up.gif)
+
+### Log In
+
+![log in](documentation/testing/log%20in.gif)
+
+
+## Bugs
+
+There were a few minors bugs, but there was more problem with the correct formating of the HTML, since ID's were used multiple times when that goes agains normalisation techniques.
+
+- Images were not displaying correct - It was fixed by using tags rather than relative paths.
+- ID used multiple times - It was fixed by making them into classes.
+-The borders on home page were not surrounding every news story correctly - It was corrected by ensuring the tags for "for new in object.list" were set up correctly and all divs were closed properly.
+- Cloudinary wouldn't connect properly - It was fixed by ensuring that all the right packages were installed and necessary API's were added properly to GitHub and Heroku
+- Field restrictions were set in place to make sure that the user would fill all the fields with the correct information.
+- First everyone could add, edit and delete news - Restrictions were set up on the admin panel, but also through the views and models. Thus limiting the access to special users.
+- First it would show an error if the form was not filled out correctly, now it allows to carry on filling it out.
+
+No mores bugs that I am aware of, if any bug is found, please do not hesitate to contact me.

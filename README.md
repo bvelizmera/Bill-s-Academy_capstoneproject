@@ -348,8 +348,10 @@ To mirror the creation of this project, it is necessary to carry out the followi
 1. Create an account on Heroku.
 2. Create a new app choosing the correct region to.
 3. Go to the settings tab of the new said chosen app and reveal config vars. These values are necessary and must match the values that you set on the project and your `env.py`. They are as follows:
-	- SECRET_KEY
+	- SECRET_KEY 
+      - This key can be anything, but preferably generated
 	- DATABASE_URL
+      - This is the key to the database, in my case I used ElephantSQL as a database service. First Sign up on Elephant SQL to set up the database for your project.
 	- CLOUDINARY_URL
 
 4. GitHub account and repository must be linked together with Heroku to ensure a succesful deployment. [Here](https://devcenter.heroku.com/articles/github-integration "Here") is the documentation.
@@ -359,6 +361,8 @@ To mirror the creation of this project, it is necessary to carry out the followi
 6. For a safer deployment, select manual deploy from branch, thus allowing to decide when to deploy the site.
 
 7. The [app](https://tennis-academy-05aa7afa19fa.herokuapp.com/ "app") should be available now.
+
+8. Always remember to set `DEBUG = False` before deployment.
 **Important:
 	All packages on requirements.txt must be installed on Django using the command line ` pip install -r requirements.txt`
 	Although whitenoise is installed to collectstatic files, it is advisable to collectstatic files manually to ensure a successful deployment. The command line is `python3 manage.py collectstatic`.
