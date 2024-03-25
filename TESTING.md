@@ -15,7 +15,7 @@ As recommended, [HTML W3C Validator](https://validator.w3.org) was used to valid
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| tournament | new_list.html | ![screenshot](documentation/validation/w3c-about.png) | Error - Used ID multiple times|
+| tournament/templates/tournament | new_list.html | ![screenshot](documentation/validation/w3c-about.png) | 1 error present on all pages - it comes from the fontawesome kit: transform: var(--fa-rotate-angle, none)|
 | tournament | tournament_list.html | ![screenshot](documentation/validation/w3c-comment-delete.png) | Error - Used ID multiple times |
 | templates | signup.html | ![screenshot](documentation/validation/w3c-comment-edit.png) | Error- Used ID multiple times |
 | templates | login.html | ![screenshot](documentation/validation/w3c-work.png) |Error - Used ID multiple times |
