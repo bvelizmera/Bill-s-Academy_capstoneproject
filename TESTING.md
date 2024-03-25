@@ -15,45 +15,30 @@ As recommended, [HTML W3C Validator](https://validator.w3.org) was used to valid
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| tournament/templates/tournament | new_list.html | ![screenshot](documentation/validation/w3c-about.png) | 1 error present on all pages - it comes from the fontawesome kit: transform: var(--fa-rotate-angle, none)|
-| tournament | tournament_list.html | ![screenshot](documentation/validation/w3c-comment-delete.png) | Error - Used ID multiple times |
-| templates | signup.html | ![screenshot](documentation/validation/w3c-comment-edit.png) | Error- Used ID multiple times |
-| templates | login.html | ![screenshot](documentation/validation/w3c-work.png) |Error - Used ID multiple times |
-| tournament | new_detail.html | ![screenshot](documentation/validation/w3c-work-create.png) | Error - Used ID multiple times and style element not allowed as child of element main|
-| tournament | tournament_detail | ![screenshot](documentation/validation/w3c-work-delete.png) | Error - Used ID multiple times |
-| tournament | edit_tournament.html | ![screenshot](documentation/validation/w3c-work-details.png) | Error - Used ID multiple times. Coming from the header |
-| tournament | edit_new.html | ![screenshot](documentation/validation/w3c-work-edit.png) | Error - Used ID multiple times. Coming from the header |
-| contact | contact.html | ![screenshot](documentation/validation/w3c-contact.png) | |
-| home | index.html | ![screenshot](documentation/validation/w3c-home.png) | |
-| templates | base.html | ![screenshot](documentation/validation/w3c-base.png) | |
-| templates | index.html | ![screenshot](documentation/validation/w3c-index.png) | |
-| templates | signup.html/allauth | ![screenshot](documentation/validation/w3c-signup.png) | Known errors with allauth register page |
-| templates | logout.html/allauth | ![screenshot](documentation/validation/w3c-signin.png) | |
-| templates | login.html/allauth | ![screenshot](documentation/validation/w3c-signout.png) | |
-| templates | 404.html | ![screenshot](documentation/validation/w3c-404.png) | |
-| templates | 500.html | ![screenshot](documentation/validation/w3c-500.png) | |
-| user_dashboard | profile.html | ![screenshot](documentation/validation/w3c-profile.png) | |
-| user_dashboard | profile_comments.html | ![screenshot](documentation/validation/w3c-profile-comments.png) | |
-| user_dashboard | profile_contact.html | ![screenshot](documentation/validation/w3c-profile-contact.png) | |
-| user_dashboard | profile_likes.html | ![screenshot](documentation/validation/w3c-profile-likes.png) | |
-| user_dashboard | profile_picture.html | ![screenshot](documentation/validation/w3c-profile-picture.png) | |
-| user_dashboard | profile_posts.html | ![screenshot](documentation/validation/w3c-profile-post.png) | |
+| tournament/templates/tournament | new_list.html | ![screenshot](documentation/testing/home-w3c.png) | 1 error present on all pages - it comes from the fontawesome kit: transform: var(--fa-rotate-angle, none)|
+| tournament/templates/tournament | tournament_list.html | ![screenshot](documentation/testing/tournamentsw3c-.png) | 1 error present on all pages - it comes from the fontawesome kit: transform: var(--fa-rotate-angle, none)|
+
+While going through validation and testing I realised that I did not follow standard normalisation procedures, since I had used ID's to style different elements which makes it bad pratice, after that I fixed the html for the project thus resulting in only the problems mentioned above which one is just not adding the "<!DOCTYPE html>" tag on the validator, but ensured it is present on the document.
+
+Below you will be able to see some of the problems that occured with duplication of ID. I also did not put assign an alt value to the images before. [bad practice html](documentation/testing/Duplication%20of%20ID.png)
+
 
 ### CSS
 
-I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+As recommended, [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate the css file.
+
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | style.css | ![screenshot](documentation/validation/w3c-css.png) | |
+| static/css | style.css | ![screenshot](documentation/testing/css-w3c.png)| No errors |
 
 ### Python
 
-I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+As recommended by the programme, [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) was used for Python validation.
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| about | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/BenFash/RateTheWork/main/about/urls.py) | ![screenshot](documentation/validation/linter-about-url.png) | |
+| tennisacademy | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/BenFash/RateTheWork/main/about/urls.py) | ![screenshot](documentation/validation/linter-about-url.png) | |
 | about | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/BenFash/RateTheWork/main/about/views.py) | ![screenshot](documentation/validation/linter-about-views.png) | |
 | blog | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/BenFash/RateTheWork/main/blog/admin.py) | ![screenshot](documentation/validation/linter-blog-admin.png) | |
 | blog | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/BenFash/RateTheWork/main/blog/forms.py) | ![screenshot](documentation/validation/linter-blog-forms.png) | |
