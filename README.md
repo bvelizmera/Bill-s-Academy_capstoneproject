@@ -2,6 +2,8 @@
 
 The Tennis Academy is a functional and educational platform that allows tennis lovers to share and exchange their passion for the game. Users can create their own unique member profiles to personalize their experience, connect with fellow players, and view relevant news updates. By offering users exposure to recent and upcoming tournaments, the Tennis Academy platform also facilitates tournament entry and tracking for players of varying skill levels. 
 
+![Responsitivity Test](documentation/readme/amiresponsive.png)
+
 
 ## UX
 
@@ -22,7 +24,9 @@ The registration and login pages welcome and guide users in the creation and usa
 
 ### Colour Scheme
 
-The theme of orange, yellow, and light pastel colors helps accentuate the decorative tennis-themed header. Incorporating contrast in background and text colors was a helpful and fun stylistic tool to enhance user experience. 
+The theme of orange, yellow, and light pastel colors helps accentuate the decorative tennis-themed header. Incorporating contrast in background and text colors was a helpful and fun stylistic tool to enhance user experience. The chosen [Color Palette](https://coolors.co/e24502-ffdab9-870703-d30cd5-860701 "Color Palette") was:
+
+![Color Palette](documentation/readme/coolors.png)
 
 - `#e24502` used for h1, borders, news, and tournaments text.
 - `#ffdab9` used for the overall background.
@@ -75,70 +79,25 @@ The theme of orange, yellow, and light pastel colors helps accentuate the decora
 ## Wireframes
 To ensure that best practices were carried out, [Balsamiq](https://balsamiq.com/wireframes)  was used to make the wireframe designs.
 
-### Home Page
-
-<details>
-<summary> Click here to see the Mobile Wireframes </summary>
-
-Home
-  - ![screenshot](documentation/wireframes/mobile-home.png)
-
-Our Mission
-  - ![screenshot](documentation/wireframes/mobile-our-mission.png)
-
-Facilities
-  - ![screenshot](documentation/wireframes/mobile-facilities.png)
-
-Sign Up
-  - ![screenshot](documentation/wireframes/mobile-sign-up.png)
-
-</details>
+### Home Page (Logged in/Logged Out)
+  ![home page](documentation/readme/Home%20Page.png)
 
 ### Tournaments Page
-<details>
-<summary> Click here to see the Tablet Wireframes </summary>
-
-Home
-  - ![screenshot](documentation/wireframes/tablet-home.png)
-
-Our Mission
-  - ![screenshot](documentation/wireframes/tablet-our-mission.png)
-
-Facilities
-  - ![screenshot](documentation/wireframes/tablet-facilities.png)
-
-Sign Up
-  - ![screenshot](documentation/wireframes/tablet-sign-up.png)
-
-</details>
+  ![tourn page](documentation/readme/Tournaments.png)
 
 ### Profile Page
+  ![profile page](documentation/readme/Profile%20Page.png)
 
-### Add Tournament Page
+### Edit Profile Page
+  ![edit profile](documentation/readme/EDIT%20PROFILE.png)
 
-### Add News Page
+### Add News and Tournament Pages
+  ![wf add news](documentation/readme/ADD%20NEWS.png)
+  ![wf add tourn](documentation/readme/ADD%20TOURNAMENT.png)
 
-### Log in /Registration Page
-
-### Log out Page
-
-
-<details>
-<summary> Click here to see the Desktop Wireframes </summary>
-
-Home
-  - ![screenshot](documentation/wireframes/desktop-home.png)
-
-Our Mission
-  - ![screenshot](documentation/wireframes/desktop-our-mission.png)
-
-Facilities
-  - ![screenshot](documentation/wireframes/desktop-facilities.png)
-
-Sign Up
-  - ![screenshot](documentation/wireframes/desktop-sign-up.png)
-
-</details>
+### Log in and Log Out Pages
+  ![wf log in](documentation/readme/LOG%20IN.png)
+  ![wf log out](documentation/readme/LOG%20OUT.png)
 
 ## Features of the Site Project
 
@@ -146,57 +105,89 @@ Sign Up
 
 - Allauth package was used as authentication system for the website.
 
-- HEADER AND NAVIGATION BAR
+#### HEADER AND NAVIGATION BAR
 
     - Header provides a clear name and logo design for the tennis academy.
     - Navigation bar provides all the links and features available to each corresponding user.
     - Navigation bar is displayed on all pages for easy access.
 
-![screenshot](documentation/features/feature01.png)
+![headernavbar](documentation/readme/header%20and%20navbar.png)
 
-- FOOTER 
+As it can be seen from both images, there's a difference between a logged in(staff user) and logged out user. It is necessary to be logged in to access different features.
+#### FOOTER 
 
     - Provides another logo for the academy.
     - Displays my LinkedIn and GitHub.
     - Displayed on all pages.
 
-![screenshot](documentation/features/feature02.png)
+![footer](documentation/readme/footer.png)
 
-- Landing Page
+#### Landing Page
 
     - The landing page welcomes the users with information on what to expect and recent developments.
-	- The navigation bar allows the user to log in and register, as well as see all the upcoming tournaments.
-	- If logged in, depending on user or staff, the navigation will have more or less features.
-	- Users can click on each news snippet to view more details. If the user is classified as a staff user, they have editing rights of the pieces of news that they drafted.
-		- Staff
-		- Normal user
-
-- Tournaments page
+	  - The navigation bar allows the user to log in and register as well as see all the upcoming tournaments.
+	  - If logged in, depending on user or staff, the navigation will have more or less features.
+	  - Users can click on each news snippet to view more details. If the user is classified as a staff user, they have editing rights of the pieces of news that they drafted.
+		  - Staff / Normal User
+![landpage log in staff](documentation/readme/landpagli.png)
+![landpage log in user](documentation/readme/normal%20user%20log%20in.png)
+       As it can be seen from both pictures, the navigation bar changes depending on the type of user.
+  
+#### Tournaments page
 	- Users can view all available and upcoming tournaments with a brief description attached for each tournament.
-	- Users can click on each tournament to view more details. If the user is classified as a staff user, they have editing rights of the tournament posting that they drafted. 
 
-- Profile Page/Edit Profile Page
+  ![Tournament List as creator](documentation/readme/authortournlist.png)
+  ![Tournament List as not creator](documentation/readme/nonauthtournpage.png)
+  
+	- Users can click on each tournament to view more details. If the user is classified as a staff user, they have editing rights of the tournament posting that they drafted. On the tournaments page, there's also a distinction between of who is the creator marked as owner if the logged user is the same as the creator, and also who is the creator if logged in user is not the creator. 
+
+  ![edit tourn as creat](documentation/readme/tournauth.png)
+  ![not creat tourn](documentation/readme/non-authortourn.png)
+
+
+
+
+
+
+#### Profile Page/Edit Profile Page
 	- Users can view what information they have available on their current profile
 	- Users can edit the information available on their current profile.
-- Add Tournament/Add News Page
+![profile page](documentation/readme/profile.png)
+![edit profile](documentation/readme/edit%20profile.png)
+
+#### Add Tournament/Add News Page
 	- Both pages provide a form with their respective fields to add and create.
 	- The news will be moderated by the admin user to ensure quality posts.
-- Log out Page
+  - Both forms will be exactly as the edition forms as only the value of the fields need to be modified for edition.
+![add news](documentation/readme/news%20and%20update%20form.png)
+![add tournament](documentation/readme/addtourn.png)
+
+#### Delete Tournament/Delete News Page
+      - News and Tournaments can also be deleted. The once clicked on delete on the respectives news or tournament page, it will prompt a message to make sure the decision is correct. This feature is only availabe for the creator.
+  ![delete news](documentation/readme/delete%20new.png)
+  ![delete tourn](documentation/readme/delete%20tourn.png)
+
+#### Log out Page
 	- This page provides a clear message to allow the user to log out.
-- Log In / Register Page
+![logoutpage](documentation/readme/signout.png)
+#### Log In / Register Page
 	- Both pages used Allauth as a sign in and registration method. Thus, the template was derived from the built in system.
 	- Users must create an account to see their profile.
 	- Staff users must log in to add, edit, and delete news and tournaments.
 
+![log in](documentation/readme/signin.png)
+![register page](documentation/readme/regpag.png)
 
+### Restriction
+      - If a user is trying to access a URL to which they have no permission, the website will send them an error, or redirect them to another website.
 
-### Future Features that might be added.
+#### Future Features that might be added.
 
-- Tournament Registration
-    - The players will be able to register and unregister to a tournament with a cut off date.
-	- Players will be able to filter tournaments by category and date.
-- Academy Details
-	- Although essential, this page has not yet been created due to time constraints. This page will have extra information about the academy.
+    - Tournament Registration
+        - The players will be able to register and unregister to a tournament with a cut off date.
+      - Players will be able to filter tournaments by category and date.
+    - Academy Details
+      - Although essential, this page has not yet been created due to time constraints. This page will have extra information about the academy.
 
 ## Utilised technologies and tools for the project
 1. Balsamiq - Wireframing tool.
@@ -244,7 +235,6 @@ Sign Up
 
 ## Database Mapping
 Before starting the development, it is always good practice to map and design the database ERD, thus helping in the understanding and correlation of the different models.
-This w
 
 ```python
 #STATUS will define the options for the different categories
@@ -329,12 +319,14 @@ class New(models.Model):
 
 By doing some research online, I came across [pygraphviz](hthttps://django-extensions.readthedocs.io/en/latest/graph_models.htmltp:// "pygraphviz") and django extensions that allowed me to plot the ERD automatically, thus also making a clearer and more precise diagram.
 
+![ERD](documentation/readme/erd.png)
 
 ## Agile Development Methodology
 ### GitHub
 #### GitHub Projects
 
 For this project, [GitHub Projects](https://github.com/users/bvelizmera/projects/3) was used as an Agile tool for this capstone project. Through the use of its interface it was possible to create a [Kanban board](https://www.atlassian.com/agile/kanban/boards#:~:text=A%20kanban%20board%20is%20an,order%20in%20their%20daily%20work.// "Kanban board"), thus allowing tracking of specifics tasks that must be completed.
+![Kanban Board Project](documentation/readme/board.png)
 
 #### GitHub Issues
 GitHub Issues allowed me to use my template for user stories and thus manage the different user stories to tackle the specific tasks in hand and helping set goals.
@@ -382,6 +374,7 @@ To mirror the creation of this project, it is necessary to carry out the followi
 ### Media:
 - The icons in the header and footer were taken from [Font Awesome](https://fontawesome.com/)
 - All images used on this project are not original but added from different media sources. All credit goes to their original creators
-- Fonts used were [Nike Font](https://www.fontbolt.com/font/nike-font/ "Nike's Font"), [Luxia](https://font.download/font/luxia "Luxia") and [CreatoDisplay](https://www.dafont.com/es/creato-display.font "CreatoDisplay")
-- Favicon image from https://iconduck.com/emojis/44483/movie-camera. However, other fonts were added to CSS file as possible alternatives when testing. All credit goes to their original creators.
+- Fonts used were [Nike Font](https://www.fontbolt.com/font/nike-font/ "Nike's Font"), [Luxia](https://font.download/font/luxia "Luxia") and [CreatoDisplay](https://www.dafont.com/es/creato-display.font "CreatoDisplay") . However, other fonts were added to CSS file as possible alternatives when testing. All credit goes to their original creators.
+
+- [Favicon](https://www.iconarchive.com/show/sport-icons-by-icons-land/Tennis-Ball-icon.html) image from iconarchive. 
 
